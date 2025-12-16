@@ -1,3 +1,13 @@
+% ---------------------------------------------------------
+% EEG Feature Extraction (Pre/Post Movement)
+%
+% This script extracts frequency-domain, time-domain, and
+% Hjorth features from preprocessed EEG epochs.
+%
+% Input  : Preprocessed EEG (.mat files)
+% Output : Feature table (MAT + CSV)
+% ---------------------------------------------------------
+
 clear; clc;
 
 % 9) feature extraction (pre and post)
@@ -202,5 +212,6 @@ if ~isempty(interpPct_all)
 else
     fprintf('\nNo channels were flagged for interpolation in this run.\n');
 end
+
 
 fprintf('\nPreprocessing complete. Outputs in: %s\nSaved feature CSV: %s\n', outFolder, finalCsv);

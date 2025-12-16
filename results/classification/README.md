@@ -1,25 +1,17 @@
-# Classification Results (SVM – LOSO)
+# Classification Performance Summary (SVM – LOSO)
 
-This folder contains results of EEG-based classification experiments performed
-using Support Vector Machine (SVM) models with Leave-One-Subject-Out (LOSO)
-cross-validation.
+This table summarizes classification performance obtained using an SVM classifier
+under Leave-One-Subject-Out (LOSO) cross-validation.
 
-## Task
-- Objective: Classify lifted weight levels from EEG features
-- Input features: Bandpower features (delta–low gamma)
-- Dimensionality reduction: PCA
-- Validation scheme: LOSO (subject-wise)
+## Performance Metrics
+- Mean Accuracy: **42.18%**
+- Standard Deviation: **15.98%**
+- Mean Balanced Accuracy: **41.67%**
 
-## Model Details
-- Classifier: SVM (RBF kernel)
-- Class balancing: Enabled
-- PCA components: 4
+## Observations
+- Mid-range weights (2.5 kg and 4.5 kg) show higher classification accuracy.
+- Extreme weights (0 kg and 7.5 kg) exhibit higher confusion, indicating overlapping EEG patterns.
+- Performance variability across folds highlights strong inter-subject differences.
 
-## Evaluation Metrics
-- Accuracy (per fold)
-- Balanced Accuracy
-- Confusion Matrix (aggregated across folds)
-
-## Notes
-- Subjects with unreliable signals were excluded prior to training.
-- Results reported reflect generalization across unseen subjects.
+These results indicate moderate discriminability of EEG features for multi-class
+weight classification under subject-independent evaluation.
